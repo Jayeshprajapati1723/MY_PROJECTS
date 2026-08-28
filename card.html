@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card from form</title>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Form */
+      .divs {
+        background-color: #1e293b;
+        color: white;
+        border: 1px solid #334155;
+        border-radius: 15px;
+      }
+
+      /* Card container */
+      .cardcontainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      /* Generated Card */
+      .card {
+        background-color: #ffffff;
+        color: #1e293b;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+      }
+
+      /* Button */
+      button {
+        background-color: #6366f1;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #4f46e5;
+      }
+
+      /* Inputs */
+      input {
+        background-color: #334155;
+        color: white;
+        border: 1px solid #475569;
+        border-radius: 6px;
+        padding: 8px;
+      }
+      /* yha se h logic  */
+      img {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+      }
+      .cardcontainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      .divs {
+        height: 500px;
+        width: 500px;
+        padding: 20px 20px 20px 20px;
+        margin-left: 100px;
+        background-color: aqua;
+        color: black;
+        border-radius: 5px solid black;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .card {
+        margin-top: 20px;
+        height: 700px;
+        width: 500px;
+        padding: 20px 20px 20px 20px;
+        margin-left: 100px;
+        background-color: aquamarine;
+        padding: 20px 20px 20px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Card Generator Website</h1>
+    <div class="divs">
+      <form>
+        NAME
+        <input type="text" />
+        CLASS
+        <input type="tel" />
+        SUB
+        <input type="text" />
+        SECTION
+        <input type="TEXT" placeholder="ENTER SECTION" />
+        UPLOAD PHOTO
+        <input type="text" />
+
+        <button>SUBMIT</button>
+      </form>
+    </div>
+    <div class="cardcontainer"></div>
+  </body>
+
+  <script>
+    let form = document.querySelector("form");
+    let inputs = document.querySelectorAll("input");
+    let maincard = document.querySelector(".card");
+
+    let cardcontainer = document.querySelector(".cardcontainer");
+
+    form.addEventListener("submit", function (det) {
+      det.preventDefault();
+      let pic = inputs[4].value;
+      let name = inputs[0].value;
+      let clas = inputs[1].value;
+      let sec = inputs[2].value;
+      let sub = inputs[3].value;
+
+      let maincard = document.createElement("div");
+      maincard.classList.add("card");
+      cardcontainer.append(maincard);
+
+      if (pic) {
+        let profile = document.createElement("img");
+        profile.setAttribute("src", pic);
+        profile.className = "profile";
+        maincard.append(profile);
+
+        let heading0 = document.createElement("h4");
+        heading0.textContent = `NAME : ${name} `;
+        maincard.append(heading0);
+
+        let heading1 = document.createElement("h4");
+        heading1.textContent = `NAME : ${clas} `;
+        maincard.append(heading1);
+
+        let heading2 = document.createElement("h4");
+        heading2.textContent = `NAME : ${sec} `;
+        maincard.append(heading2);
+
+        let heading3 = document.createElement("h4");
+        heading3.textContent = `NAME : ${sub} `;
+        maincard.append(heading3);
+      }
+    });
+  </script>
+</html>
