@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>dynamic ball</title>
+    <style>
+      div {
+        height: 500px;
+        width: 500px;
+        background-color: aquamarine;
+        /* viewport k hisab se  */
+        position: fixed;
+        /* do variable bna  lo */
+        left: var(--x);
+        top: var(--y);
+        border-radius: 50%;
+        z-index: 0.25;
+      }
+
+      h1{
+        text-align: center;
+        font-size: 100px ;
+        text-decoration: yellowgreen;
+      }
+      body{
+        font-family:'Times New Roman', Times, serif;
+        color: gold ;
+        background-image: url("https://plus.unsplash.com/premium_photo-1676673222111-642b0ce431ef?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JhcGglMjB4JTIweXxlbnwwfHwwfHx8MA%3D%3D");
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ek div rhega jo mouse se dynamic position change  krega through js 
+     
+    to mene ek div bna liya h-->
+
+    <h1 >BALL MOVE WITH MOUSE MOVE </h1>
+    <div>mousemove</div>
+  </body>
+  <script>
+    let div = document.querySelector("div");
+
+    window.addEventListener("mousemove", function (detail) {
+      console.log(detail.clientX, "x cordinates");
+      console.log(detail.clientY, "y cordinates");
+
+      div.style.setProperty("--x", detail.clientX + "px");
+      div.style.setProperty("--y", detail.clientY + "px");
+    });
+  </script>
+</html>
