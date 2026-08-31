@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      div {
+        width: 200px;
+        font-size: small;
+      }
+      button{
+        background-color: black;
+        color :white ;
+        border : 2px solid yellowgreen ;
+        width: 150px  ;
+        border-radius: 5px ;
+        
+        align-self: center;
+      }
+      .cont {
+        background-color: rgb(251, 249, 254) ;
+        color: white;
+        position: relative;
+        left: 100px;
+        top: 100px;
+        height: 200px;
+        width: 300px;
+        border-radius: 2px;
+        border: 2px solid aqua;
+        padding :2px  2px 2px 2px ;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px 10px 10px;
+      }
+
+      input {
+        margin-top: 10px;
+        border : 2px  solid pink ;
+      }
+      h3{
+        text-align: center;
+        font-weight: 800px  ;
+        color : black  ;
+        text-transform: capitalize;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>email/password validator</title>
+  </head>
+  <body>
+    <!-- regax se valid krenge code of pattern to valid some details which not written by coders its just simple c and  paste -->
+    <div class="cont">
+      <form>
+        <h3>email password validator</h3>
+        <br />
+        <input type="email" id="email" placeholder="Heroyprons123@gmail.com" />
+        <input type="password" id="pass" />
+        <br />
+        <button>Submit</button>
+        <div id="msg"></div>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    let email = document.querySelector("#email");
+    let pass = document.querySelector("#pass");
+    let btn = document.querySelector("button");
+    let form = document.querySelector("form");
+    let msg = document.querySelector("#msg");
+
+    form.addEventListener("submit", function (det) {
+      det.preventDefault(); //form reload bnd kr diya
+
+      // email varification here
+      const et = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+        email.value,
+      );
+
+      //  password verifcation
+      const pt =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+          pass.value,
+        );
+      if (pt && et) {
+        console.log(et, pt);
+        alert("sucess");
+        msg.textContent = "Verification Sucessfully :)";
+        msg.style.color = "green";
+      } else {
+        alert("incorrect try again ");
+        msg.textContent = "Invalid email address. Please enter a valid format.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</html>
