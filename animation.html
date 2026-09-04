@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        background-color: red;
+        color: black;
+        height: 100px;
+        width: 200px;
+        /* yha pr call kro  */
+        animation-name: colorchange;
+        animation-duration: 5s;
+        animation-timing-function: ease-in;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+
+        animation-direction: alternate-reverse;
+      }
+
+      @keyframes colorchange {
+        /* template bna lo phle  */
+        from {
+          color: black;
+          background-color: red;
+          left: 200px 
+        }
+        to {
+          color: red;
+          background-color: aqua;
+left: 900px ;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>animation</div>
+  </body>
+</html>
