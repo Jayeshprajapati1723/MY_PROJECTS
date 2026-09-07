@@ -6,13 +6,26 @@
     <title>circular loader</title>
 <style>
     .bg{
+        margin-left: 50%;
+        margin-top: 50%;
         height:100px ;width: 100px;
     }
     .circle{
         height: 50px ;width: 50px ;
         border-radius:  50%;
-        border: 2px solid blue ;
+        border: 2px dotted blue ;
     }
+
+    .circle:hover{
+        border : 5px dotted rgb(15, 5, 5) ;
+         animation: spin 1s linear infinite;
+         
+    }
+
+    @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>
 </head>
 <body>
@@ -20,6 +33,8 @@
         <div class="circle">
 
         </div>
+
     </div>
+    
 </body>
 </html>
